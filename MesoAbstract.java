@@ -8,4 +8,5 @@ public abstract class MesoAbstract
 	abstract int[] calAverage();
 
 	//TODO: Create an abstract method letterAverage with return type char
+	abstract char letterAverage();
 }
