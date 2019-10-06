@@ -1,7 +1,7 @@
 
 public class MesoInherit extends MesoAbstract
 {
-	
+	private int[] ascii; //array that contains the ASCII values of letters
 	public MesoInherit(MesoStation stID){
 		
 	}
