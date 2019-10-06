@@ -63,8 +63,9 @@ public class LetterAvg
 	 */
 	public int numberOfStationWithLetterAvg() {
 		int result = 0;
-		for (int i = 0; i < stationData.length; ++i) {
-			String station = stationData[i];
+		int i = 0;
+		while (stationData[i] != null) { //only execute test when the index of the array has a station
+			String station = stationData[i++];
 			if (station.charAt(0) == c) {	//this for loop checks the first char of each station to compare
 				++result;
 				if (numStationsSame == same.length) { //calling the expand array method if same array is full
@@ -72,8 +73,7 @@ public class LetterAvg
 				}
 				same[numStationsSame++] = station; //adding that station to the array to print out in toString
 			}
-		}
-		return result;
+		} return result;
 	}
 	
 	/*
