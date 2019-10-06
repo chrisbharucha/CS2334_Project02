@@ -1,12 +1,13 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class LetterAvg 
 {
 	private String[] stationData = new String[10]; //array that stores all station ID's
 	private int numStations = 0; //counter for the stationData array starting at zero
-	private String[] same = new String[5]; //this array stores the stations that start with the letter average char
+	private String[] same = new String[1]; //this array stores the stations that start with the letter average char
 	private int numStationsSame = 0; //counter for the numStationsSame array starting at zero
 	private char c; //the char used for the averages
 	
@@ -51,10 +52,10 @@ public class LetterAvg
 	 * This method simply expands the same array length when the capacity becomes full
 	 */
 	public void expandArraySame() {
-		int newSize = stationData.length * 2;
+		int newSize = same.length + 1;
 		String[] newArray = new String[newSize];
-		for (int i = 0; i < stationData.length; ++i) {
-			newArray[i] = stationData[i];	//copying over the old array contents to new array
+		for (int i = 0; i < same.length; ++i) {
+			newArray[i] = same[i];	//copying over the old array contents to new array
 		} this.same = newArray;	//updating class reference
 	}
 	
@@ -75,15 +76,11 @@ public class LetterAvg
 			}
 		} return result; 
 	}
-	
+
 	/*
 	 * This method returns the stations that start with the same first letter as the letter average
 	 */
 	public String toString() {
-		int i = 0;
-		System.out.println("\nThey are: ");
-		while (same[i] != null) {
-		System.out.println(same[i++]);
-		} return "";
+		return "They are:\n" + samePrint();
 	}
 }

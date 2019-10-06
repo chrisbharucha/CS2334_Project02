@@ -38,7 +38,7 @@ public class PosAvg{
 	 * This method finds the index number of the line that a given stationID is on and returns it
 	 */
 	public int indexOfStation() {
-		int index = 4; //the file reader begins showing stations at line 4
+		int index = 1; //the file reader begins at index 1
 		for (int i = 0; i < numStations - 1; i++) {
 			String test = stationData[i];
 			if (stID.equalsIgnoreCase(test)) {
@@ -68,17 +68,17 @@ public class PosAvg{
 		int index = indexOfStation(); //getting the index value of the stID in question
 		
 		/*
-		 * index is subtracted by 5, 3, and 6, 2, because the stations began appearing in the file
+		 * index is subtracted by 2, 0, and 3, -1, because the stations began appearing in the file
 		 * on line 4
 		 */
-		String temp = stationData[index-5]; //first set of stations that share average
+		String temp = stationData[index-2]; //first set of stations that share average
 		average[0] = temp;
-		temp = stationData[index-3];
+		temp = stationData[index];
 		average[1] = temp;
 		
-		temp = stationData[index-6]; //second set of stations that share average
+		temp = stationData[index-3]; //second set of stations that share average
 		average[2] = temp;
-		temp = stationData[index-2];
+		temp = stationData[index+1];
 		average[3] = temp;
 		
 		return average;
@@ -88,7 +88,7 @@ public class PosAvg{
 	 * This method overrides the toString method to print out some more data about the averages
 	 */
 	public String toString() {
-		return String.format("This index is the average of %s and %s, %s and %s, and so on.",indexAverage()[0],
+		return String.format("This index is average of %s and %s, %s and %s, and so on.",indexAverage()[0],
 							indexAverage()[1],indexAverage()[2],indexAverage()[3]);
 	}
 	
