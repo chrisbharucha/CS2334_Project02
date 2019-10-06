@@ -51,11 +51,16 @@ public class MesoInherit extends MesoAbstract
 		double average = (ascii1 + ascii2 + ascii3 + ascii4) / 4;
 		result[0] = (int)Math.ceil(average); //ASCII Ceiling
 		result[1] = (int)Math.floor(average); //ASCII Floor
-		
-		
-		
-		
-		return null;
+		/*
+		 * testing whether the decimal is less than or greater than 0.5 in order to apply the correct function
+		 */
+		if ((average - (int)average) >= 0.5) {	
+			result[2] = (int)Math.ceil(average);
+		}
+		else {
+			result[2] = (int)Math.ceil(average);
+		}
+		return result;
 	}
 	
 	/*
