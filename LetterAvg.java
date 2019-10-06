@@ -6,7 +6,8 @@ public class LetterAvg
 {
 	private String[] stationData = new String[10]; //array that stores all station ID's
 	private int numStations = 0; //counter for the stationData array starting at zero
-	private String[] same; //this array stores the stations that start with the letter average char
+	private String[] same = new String[5]; //this array stores the stations that start with the letter average char
+	private int numStationsSame = 0; //counter for the numStationsSame array starting at zero
 	private char c; //the char used for the averages
 	
 	/*
@@ -36,6 +37,28 @@ public class LetterAvg
 	}
 	
 	/*
+	 * This method simply expands the stationData array length when the capacity becomes full
+	 */
+	public void expandArrayStation() {
+		int newSize = stationData.length * 2;
+		String[] newArray = new String[newSize];
+		for (int i = 0; i < stationData.length; ++i) {
+			newArray[i] = stationData[i];	//copying over the old array contents to new array
+		} this.stationData = newArray;	//updating class reference
+	}
+	
+	/*
+	 * This method simply expands the same array length when the capacity becomes full
+	 */
+	public void expandArraySame() {
+		int newSize = stationData.length * 2;
+		String[] newArray = new String[newSize];
+		for (int i = 0; i < stationData.length; ++i) {
+			newArray[i] = stationData[i];	//copying over the old array contents to new array
+		} this.same = newArray;	//updating class reference
+	}
+	
+	/*
 	 * This method finds the number of stations in the text file that start with the same first letter as the letter average
 	 */
 	public int numberOfStationWithLetterAvg() {
@@ -44,20 +67,13 @@ public class LetterAvg
 			String station = stationData[i];
 			if (station.charAt(0) == c) {	//this for loop checks the first char of each station to compare
 				++result;
+				if (numStationsSame == same.length) { //calling the expand array method if same array is full
+					expandArraySame();
+				}
+				same[numStationsSame++] = station; //adding that station to the array to print out in toString
 			}
 		}
 		return result;
-	}
-	
-	/*
-	 * This method simply expands the stationData array length when the capacity becomes full
-	 */
-	public void expandArray() {
-		int newSize = stationData.length * 2;
-		String[] newArray = new String[newSize];
-		for (int i = 0; i < stationData.length; ++i) {
-			newArray[i] = stationData[i];	//copying over the old array contents to new array
-		} this.stationData = newArray;	//updating class reference
 	}
 	
 	/*
