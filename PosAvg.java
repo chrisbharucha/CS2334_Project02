@@ -45,8 +45,7 @@ public class PosAvg{
 				return index;
 			}
 			++index;
-		}
-		return 99999; //used for error checking method
+		} return index;
 	}
 	
 	/*
@@ -58,6 +57,34 @@ public class PosAvg{
 		for (int i = 0; i < stationData.length; ++i) {
 			newArray[i] = stationData[i];	//copying over the old array contents to new array
 		} this.stationData = newArray;	//updating class reference
+	}
+	
+	/*
+	 * This method is used to calculate the index average value of two station's indexes in stationData
+	 * that equals the indexofStation() value
+	 */
+	public String[] indexAverage() {
+		String[] average = new String[4]; //returning 2 sets of stations which have an average equal to index
+		int index = indexOfStation(); //getting the index value of the stID in question
+		
+		String temp = stationData[index-1]; //first set of stations that share average
+		average[0] = temp;
+		temp = stationData[index+1];
+		average[1] = temp;
+		
+		temp = stationData[index-2]; //second set of stations that share average
+		average[2] = temp;
+		temp = stationData[index+2];
+		average[3] = temp;
+		
+		return average;
+	}
+	
+	/*
+	 * This method overrides the toString method to print out some more data about the averages
+	 */
+	public toString() {
+		return String.format("This index is the average of %s and %s, %s and %s, and so on.",);
 	}
 	
 }
