@@ -68,8 +68,8 @@ public class PosAvg{
 		int index = indexOfStation(); //getting the index value of the stID in question
 		
 		/*
-		 * index is subtracted by 2, 0, and 3, -1, because the stations began appearing in the file
-		 * on line 4
+		 * since we are pulling Strings from stationData array, and we started at index 1 instead of zero,
+		 * the we subtract by 2 and 0, and 3 and -1.
 		 */
 		String temp = stationData[index-2]; //first set of stations that share average
 		average[0] = temp;
