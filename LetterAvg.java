@@ -24,7 +24,7 @@ public class LetterAvg
 			String dataLine = br.readLine(); //first line that actually contains data stored in String
 			while (br.ready()) { //while file still has data to be read
 				if (numStations == stationData.length) {
-					expandArray(); //expanding the array if capacity is full
+					expandArrayStation(); //expanding the array if capacity is full
 				}
 				/*
 				*splitting the dataLine String by white spaces and storing the second element into info because
@@ -80,6 +80,6 @@ public class LetterAvg
 	 * This method returns the stations that start with the same first letter as the letter average
 	 */
 	public String toString() {
-		return "They are: \n" + System.out.println(same[]);
+		return String.format("They are: \n %s",same.toString());
 	}
 }
