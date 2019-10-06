@@ -73,13 +73,17 @@ public class LetterAvg
 				}
 				same[numStationsSame++] = station; //adding that station to the array to print out in toString
 			}
-		} return result;
+		} return result; 
 	}
 	
 	/*
 	 * This method returns the stations that start with the same first letter as the letter average
 	 */
 	public String toString() {
-		return String.format("They are: \n %s",same.toString());
+		int i = 0;
+		System.out.println("\nThey are: ");
+		while (same[i] != null) {
+		System.out.println(same[i++]);
+		} return "";
 	}
 }
