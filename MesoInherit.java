@@ -23,10 +23,33 @@ public class MesoInherit extends MesoAbstract
 	 * This method calculates the ASCII Ceiling, ASCII Floor, and the ASCII Average
 	 */
 	public int[] calAverage() {
-		char firstLetter = stID.charAt(0);
-		char secLetter = stID.charAt(1);
-		char thirdLetter = stID.charAt(2);
-		char fourthLetter = stID.charAt(3);
+		int[] result = new int[3]; //array that holds the results of the method
+		//getting all of the chars from stID
+		char c1 = stID.charAt(0);
+		char c2 = stID.charAt(1);
+		char c3 = stID.charAt(2);
+		char c4 = stID.charAt(3); //explosive
+		int ascii1, ascii2, ascii3, ascii4 = 0; //variable to store all ASCII values in
+		
+		for(int i = 0; i < ascii.length; ++i) {	//this for loop finds all of the ASCII values for each char
+			int asciiVal = ascii[i];
+			char cTest = letters[i];
+			if (c1 == cTest) {		//finds c1's ASCII if true
+				ascii1 = asciiVal;
+			}
+			else if (c2 == cTest) {	//finds c2's ASCII if true
+				ascii2 = asciiVal;
+			}
+			else if (c3 == cTest) {	//finds c3's ASCII if true
+				ascii3 = asciiVal;
+			}
+			else if (c4 == cTest) {	//finds c4's ASCII if true
+				ascii4 = asciiVal;
+			}
+		}
+		
+		int average = (ascii1 + ascii2 + ascii3 + ascii4) / 4;
+		
 		
 		
 		return null;
