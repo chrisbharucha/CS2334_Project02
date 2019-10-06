@@ -38,7 +38,7 @@ public class PosAvg{
 	 * This method finds the index number of the line that a given stationID is on and returns it
 	 */
 	public int indexOfStation() {
-		int index = 1; //the file reader begins indexing at 1
+		int index = 4; //the file reader begins showing stations at line 4
 		for (int i = 0; i < numStations - 1; i++) {
 			String test = stationData[i];
 			if (stID.equalsIgnoreCase(test)) {
@@ -67,14 +67,18 @@ public class PosAvg{
 		String[] average = new String[4]; //returning 2 sets of stations which have an average equal to index
 		int index = indexOfStation(); //getting the index value of the stID in question
 		
-		String temp = stationData[index-1]; //first set of stations that share average
+		/*
+		 * index is subtracted by 5, 3, and 6, 2, because the stations began appearing in the file
+		 * on line 4
+		 */
+		String temp = stationData[index-5]; //first set of stations that share average
 		average[0] = temp;
-		temp = stationData[index+1];
+		temp = stationData[index-3];
 		average[1] = temp;
 		
-		temp = stationData[index-2]; //second set of stations that share average
+		temp = stationData[index-6]; //second set of stations that share average
 		average[2] = temp;
-		temp = stationData[index+2];
+		temp = stationData[index-2];
 		average[3] = temp;
 		
 		return average;
