@@ -67,7 +67,11 @@ public class MesoInherit extends MesoAbstract
 	 * This method finds the letter average using ASCII values
 	 */
 	public char letterAverage() {
-		return 'x';
+		int average = calAverage()[2]; //gets the average ASCII value: either floor or ceiling
+		int index = 0, i = 0;
+		while (average != ascii[i]) {
+			
+		}
 	}
 	
 }
