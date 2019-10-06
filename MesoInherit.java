@@ -2,7 +2,7 @@
 public class MesoInherit extends MesoAbstract
 {
 	private int[] ascii = new int[26]; //array that contains the ASCII values of letters
-	private char[] letters = new char[26]; //array that contains all of the letters
+	private char[] letters; //array that contains all of the letters
 	private String stID; //the station ID that all the calculations will be done on
 	
 	/*
@@ -15,8 +15,8 @@ public class MesoInherit extends MesoAbstract
 		for (int i = 0; i < ascii.length; ++i) { //using a for loop to fill in the ASCII values
 			ascii[i] = startingVal++;
 		}
-		char[] letters = {'A','B','C','D','E','F','G','H','I','J','K','L','M'
-		          		  ,'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+		letters = new char[]{'A','B','C','D','E','F','G','H','I','J','K','L','M', //filling the letters array
+							 'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 	}
 	
 	/*
@@ -67,10 +67,12 @@ public class MesoInherit extends MesoAbstract
 	 * This method finds the letter average using ASCII values
 	 */
 	public char letterAverage() {
-		int average = calAverage()[2]; //gets the average ASCII value: either floor or ceiling
-		int index = 0, i = 0;
-		while (average != ascii[i]) { //finds the array index where the ASCII value is located
-			++index; ++i;
+		int average = calAverage()[2]; //gets the average ASCII value: either floor or ceiling}
+		int index = 0;
+		for (int i = 0; i < ascii.length; ++i) { //finds the array index where the ASCII value is located
+			if (average == ascii[i]) {
+				index = i;
+			}
 		}
 		char result = letters[index]; //using the array index to find the corresponding letter
 		return result;
