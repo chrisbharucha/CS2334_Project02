@@ -83,8 +83,9 @@ public class PosAvg{
 	/*
 	 * This method overrides the toString method to print out some more data about the averages
 	 */
-	public toString() {
-		return String.format("This index is the average of %s and %s, %s and %s, and so on.",);
+	public String toString() {
+		return String.format("This index is the average of %s and %s, %s and %s, and so on.",indexAverage()[0],
+							indexAverage()[1],indexAverage()[2],indexAverage()[3]);
 	}
 	
 }
