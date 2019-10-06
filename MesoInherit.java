@@ -29,7 +29,7 @@ public class MesoInherit extends MesoAbstract
 		char c2 = stID.charAt(1);
 		char c3 = stID.charAt(2);
 		char c4 = stID.charAt(3); //explosive
-		int ascii1, ascii2, ascii3, ascii4 = 0; //variable to store all ASCII values in
+		int ascii1 = 0, ascii2 = 0, ascii3 = 0, ascii4 = 0; //variable to store all ASCII values in
 		
 		for(int i = 0; i < ascii.length; ++i) {	//this for loop finds all of the ASCII values for each char
 			int asciiVal = ascii[i];
@@ -47,8 +47,11 @@ public class MesoInherit extends MesoAbstract
 				ascii4 = asciiVal;
 			}
 		}
+		//finding the average after getting the ASCII values
+		double average = (ascii1 + ascii2 + ascii3 + ascii4) / 4;
+		result[0] = (int)Math.ceil(average); //ASCII Ceiling
+		result[1] = (int)Math.floor(average); //ASCII Floor
 		
-		int average = (ascii1 + ascii2 + ascii3 + ascii4) / 4;
 		
 		
 		
