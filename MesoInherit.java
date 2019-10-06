@@ -48,7 +48,7 @@ public class MesoInherit extends MesoAbstract
 			}
 		}
 		//finding the average after getting the ASCII values
-		double average = (ascii1 + ascii2 + ascii3 + ascii4) / 4;
+		double average = (ascii1 + ascii2 + ascii3 + ascii4) / 4.0; //using 4.0 so that the ASCII values get casted to a double
 		result[0] = (int)Math.ceil(average); //ASCII Ceiling
 		result[1] = (int)Math.floor(average); //ASCII Floor
 		/*
@@ -58,7 +58,7 @@ public class MesoInherit extends MesoAbstract
 			result[2] = (int)Math.ceil(average);
 		}
 		else {
-			result[2] = (int)Math.ceil(average);
+			result[2] = (int)Math.floor(average);
 		}
 		return result;
 	}
