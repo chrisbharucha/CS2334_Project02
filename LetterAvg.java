@@ -10,7 +10,7 @@ public class LetterAvg
 	private char c; //the char used for the averages
 	
 	/*
-	 * This constructor takes in 
+	 * This constructor takes in a char from the MesoInherit letterAverage method for calculations
 	 */
 	public LetterAvg(char c) throws IOException
 	{
@@ -35,8 +35,18 @@ public class LetterAvg
 			} br.close(); //closing the reading when finished
 	}
 	
+	/*
+	 * This method finds the number of stations in the text file that start with the same first letter as the letter average
+	 */
 	public int numberOfStationWithLetterAvg() {
-		return 0;
+		int result = 0;
+		for (int i = 0; i < stationData.length; ++i) {
+			String station = stationData[i];
+			if (station.charAt(0) == c) {	//this for loop checks the first char of each station to compare
+				++result;
+			}
+		}
+		return result;
 	}
 	
 	/*
