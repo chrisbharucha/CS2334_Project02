@@ -81,6 +81,10 @@ public class LetterAvg
 	 * This method returns the stations that start with the same first letter as the letter average
 	 */
 	public String toString() {
-		return "They are:\n" + samePrint();
+		String arrays = same[0];
+		for (int i = 1; i < same.length; ++i) {
+			arrays = arrays + "\n" + same[i];
+		}
+		return String.format("They are:\n%s",arrays);
 	}
 }
