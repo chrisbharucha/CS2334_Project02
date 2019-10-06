@@ -34,8 +34,19 @@ public class PosAvg{
 				} br.close(); //closing the reading when finished	
 	}
 	
+	/*
+	 * This method finds the index number of the line that a given stationID is on and returns it
+	 */
 	public int indexOfStation() {
-		return 0;
+		int index = 1; //the file reader begins indexing at 1
+		for (int i = 0; i < numStations - 1; i++) {
+			String test = stationData[i];
+			if (stID.equalsIgnoreCase(test)) {
+				return index;
+			}
+			++index;
+		}
+		return 99999; //used for error checking method
 	}
 	
 	/*
