@@ -69,9 +69,11 @@ public class MesoInherit extends MesoAbstract
 	public char letterAverage() {
 		int average = calAverage()[2]; //gets the average ASCII value: either floor or ceiling
 		int index = 0, i = 0;
-		while (average != ascii[i]) {
-			
+		while (average != ascii[i]) { //finds the array index where the ASCII value is located
+			++index; ++i;
 		}
+		char result = letters[index]; //using the array index to find the corresponding letter
+		return result;
 	}
 	
 }
