@@ -29,7 +29,7 @@ public class MesoInherit extends MesoAbstract
 		char c2 = stID.charAt(1);
 		char c3 = stID.charAt(2);
 		char c4 = stID.charAt(3); //explosive
-		int ascii1 = 0, ascii2 = 0, ascii3 = 0, ascii4 = 0; //variable to store all ASCII values in
+		double ascii1 = 0.0, ascii2 = 0.0, ascii3 = 0.0, ascii4 = 0.0; //variable to store all ASCII values in
 		
 		for(int i = 0; i < ascii.length; ++i) {	//this for loop finds all of the ASCII values for each char
 			int asciiVal = ascii[i];
@@ -37,13 +37,13 @@ public class MesoInherit extends MesoAbstract
 			if (c1 == cTest) {		//finds c1's ASCII if true
 				ascii1 = asciiVal;
 			}
-			else if (c2 == cTest) {	//finds c2's ASCII if true
+			if (c2 == cTest) {	//finds c2's ASCII if true
 				ascii2 = asciiVal;
 			}
-			else if (c3 == cTest) {	//finds c3's ASCII if true
+			if (c3 == cTest) {	//finds c3's ASCII if true
 				ascii3 = asciiVal;
 			}
-			else if (c4 == cTest) {	//finds c4's ASCII if true
+			if (c4 == cTest) {	//finds c4's ASCII if true
 				ascii4 = asciiVal;
 			}
 		}

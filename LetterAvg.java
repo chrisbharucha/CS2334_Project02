@@ -90,6 +90,6 @@ public class LetterAvg
 	 * This method returns the stations that start with the same first letter as the letter average
 	 */
 	public String toString() {
-		return String.format("They are:\n%s",stationSame);
+		return String.format("\nThey are:\n%s",stationSame);
 	}
 }
