@@ -74,30 +74,38 @@ public class LetterAvg
 				if (numStationsSame == same.length) { //calling the expand array method if same array is full
 					expandArraySame();
 				}
-				same[numStationsSame++] = station; //adding that station to the array to print out in toString
 			}
 		} 
-		/*
-		 * This takes the same array and puts the contents into a String that is formatted correctly to 
-		 * be used in the toString method
-		 */
-		stationSame = same[0] + "\n";
-		for (i = 1; i < same.length; ++i) {
-			if (same.length > 1) {
-				if (i == same.length-1) {
-				stationSame += same[i];
+		toString += stringForToString();
+		return result; 
+	}
+	
+	/*
+	 * This method takes the same array and puts the contents into a String that is formatted correctly to 
+	 * be used in the toString method
+	 */
+	public String stringForToString() {
+		int i = 0;
+		while (stationData[i] != null) {
+			String station = stationData[i++];
+			if (station.charAt(0) == c) {
+				if (numStationsSame == same.length) {
+					expandArraySame();
 				}
-				else {
-					stationSame += same[i] + "\n";
-				}
+				same[numStationsSame++] = station; //adding that station to the array to print out in toString
 			}
-		}return result; 
+		}
+		
+		stationSame = same[0];	//this formats the contents in the array into a String
+		for (i = 1; i < same.length; ++i) {
+			stationSame += "\n" + same[i];
+		} return stationSame;
 	}
 
 	/*
 	 * This method returns the stations that start with the same first letter as the letter average
 	 */
 	public String toString() {
-		return toString + stationSame;
+		return toString;
 	}
 }
