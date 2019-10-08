@@ -11,6 +11,7 @@ public class LetterAvg
 	private int numStationsSame = 0; //counter for the numStationsSame array starting at zero
 	private char c; //the char used for the averages
 	private String stationSame; //this String contains all stations that share the same first char 
+	private String toString = "\nThey are:\n"; //string used for the toString method
 	
 	/*
 	 * This constructor takes in a char from the MesoInherit letterAverage method for calculations
@@ -80,9 +81,16 @@ public class LetterAvg
 		 * This takes the same array and puts the contents into a String that is formatted correctly to 
 		 * be used in the toString method
 		 */
-		stationSame = same[0];
+		stationSame = same[0] + "\n";
 		for (i = 1; i < same.length; ++i) {
-			stationSame = stationSame + "\n" + same[i];
+			if (same.length > 1) {
+				if (i == same.length-1) {
+				stationSame += same[i];
+				}
+				else {
+					stationSame += same[i] + "\n";
+				}
+			}
 		}return result; 
 	}
 
@@ -90,6 +98,6 @@ public class LetterAvg
 	 * This method returns the stations that start with the same first letter as the letter average
 	 */
 	public String toString() {
-		return String.format("\nThey are:\n%s",stationSame);
+		return toString + stationSame;
 	}
 }
