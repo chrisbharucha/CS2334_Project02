@@ -1,8 +1,11 @@
 
 public class MesoInherit extends MesoAbstract
 {
-	private int[] ascii = new int[26]; //array that contains the ASCII values of letters
+	private static final int NUM_LETTERS = 26; //number of letters in alphabet
+	private int[] ascii = new int[NUM_LETTERS]; //array that contains the ASCII values of letters
+	
 	private char[] letters; //array that contains all of the letters
+	
 	private String stID; //the station ID that all the calculations will be done on
 	
 	/*

@@ -14,7 +14,6 @@ public class LetterAvg
 	
 	private char c; //the char used for the averages
 	
-	private String stationSame; //this String contains all stations that share the same first char 
 	private String output; //string used for the toString method
 	
 	/*
@@ -75,11 +74,8 @@ public class LetterAvg
 			String station = stationData[i++];
 			if (station.charAt(0) == c) {	//this for loop checks the first char of each station to compare
 				++result;
-				if (numStationsSame == same.length) { //calling the expand array method if same array is full
-					expandArraySame();
 				}
 			}
-		}
 		return result; 
 	}
 	

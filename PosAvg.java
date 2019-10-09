@@ -3,8 +3,10 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class PosAvg{
+	
+	private static final int INITIAL_SIZE = 10;
 	private String stID; //creating a class variable for the passed in stID
-	private String[] stationData = new String[10]; //array that stores all station ID's
+	private String[] stationData = new String[INITIAL_SIZE]; //array that stores all station ID's
 	private int numStations = 0; //counter for the stationData array starting at zero
 	
 	/*
